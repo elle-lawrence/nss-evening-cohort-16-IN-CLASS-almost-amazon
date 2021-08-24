@@ -31,9 +31,22 @@ const domEvents = () => {
     }
 
     // ADD CLICK EVENT FOR DELETING AN AUTHOR
+    if (e.target.id.includes('delete-author')) {
+      console.warn('CLICKED DELETE AUTHOR', e.target.id);
+    }
     // ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
+    if (e.target.id.includes('add-author-btn')) {
+      console.warn('CLICKED ADD AUTHOR', e.target.id);
+    }
     // ADD CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN AUTHOR
+    if (e.target.id.includes('add-author-btn')) {
+      console.warn('CLICKED ADD AUTHOR BUTTON', e.target.id);
+      // addBookForm();
+    }
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
+    if (e.target.id.includes('edit-author')) {
+      console.warn('CLICKED EDIT AUTHOR', e.target.id);
+    }
   });
 };
 
