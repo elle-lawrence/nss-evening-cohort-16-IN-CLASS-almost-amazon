@@ -1,8 +1,9 @@
+import clearDom from '../helpers/data/clearDom';
+
 const showBooks = (array) => {
   document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-book-btn">Add A Book</button>';
 
-  document.querySelector('#store').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = '';
+  clearDom();
 
   array.forEach((item) => {
     document.querySelector('#store').innerHTML += `<div class="card">
@@ -11,7 +12,7 @@ const showBooks = (array) => {
         <h5 class="card-title">${item.title}</h5>
         <p class="card-text bold">${item.sale ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Sale</span> $${item.price}` : `$${item.price}`}</p>
         <hr>
-        <button class="btn btn-info" data-toggle="modal" data-target="#formModal" id="edit-book-btn--${item.firebaseKey}">Edit Book</button>
+        <button class="btn btn-info" id="edit-book-btn--${item.firebaseKey}">Edit Book</button>
         <button class="btn btn-danger" id="delete-book--${item.firebaseKey}">Delete Book</button>
         </div>
       </div>`;
