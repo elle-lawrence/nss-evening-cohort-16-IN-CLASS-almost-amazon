@@ -43,7 +43,6 @@ body {
 
   #add-button {
     margin: 0 auto;
-    text-align: center;
   }
 
   #form-container {
@@ -71,7 +70,6 @@ body {
 
       .sale-badge {
         font-size: 1em;
-        background-color: blue;
       }
     }
 
@@ -80,5 +78,19 @@ body {
       width: 80%;
       margin: 0 auto;
     }
+  }
+}
+
+#view {
+  width: 90%;
+  margin: auto;
+
+  .details {
+    min-width: 50%;
+    max-width: 60%;
+  }
+
+  .description {
+    white-space: pre-wrap;
   }
 }
