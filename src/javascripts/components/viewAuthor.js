@@ -1,11 +1,22 @@
 import clearDom from '../helpers/data/clearDom';
 
-const showBooks = (array) => {
+const viewAuthor = (obj) => {
   clearDom();
-  document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-book-btn">Add A Book</button>';
+  document.querySelector('#store').innerHTML += `
+      <div class="mt-5 d-flex flex-wrap">
+       <div class="d-flex flex-column">
+       </div>
+       <div class="text-white ms-5 details">
+            <h2 class="card-title">${obj.first_name} ${obj.last_name}</h2>
+            <p class="card-text bold">${obj.email}</p>
+        <div class="mt-5">
+          <i id="edit-author-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+          <i id="delete-author--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
+        </div>
+      </div>`;
 
-  array.forEach((item) => {
-    document.querySelector('#store').innerHTML += `<div class="card">
+  obj.bookObject.forEach((item) => {
+    document.querySelector('#view').innerHTML += `<div class="card">
         <img class="card-img-top" src=${item.image} alt=${item.title} style="height: 400px;">
         <div class="card-body" style="height: 180px;">
         <h5 class="card-title">${item.title}</h5>
@@ -19,8 +30,4 @@ const showBooks = (array) => {
   });
 };
 
-const emptyBooks = () => {
-  document.querySelector('#store').innerHTML = '<h1>No Items</h1>';
-};
-
-export { showBooks, emptyBooks };
+export default viewAuthor;
